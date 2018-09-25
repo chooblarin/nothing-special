@@ -3,7 +3,7 @@
   "short_name": "Nothing Special",
   "description": "this is nothing special",
   "scope": ".",
-  "start_url": "/",
+  "start_url": "/nothing-special",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#ffffff",
