@@ -1,0 +1,28 @@
+main {
+  --column-count: 4;
+  --gap-size: 1rem;
+  --grid-size: calc(calc(100vw - calc(var(--gap-size) * calc(var(--column-count) - 1))) / var(--column-count));
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, var(--grid-size));
+  grid-template-rows: repeat(10, var(--grid-size));
+  grid-gap: var(--gap-size);
+  scroll-snap-type: both mandatory;
+  overflow: scroll;
+}
+
+.tile {
+  scroll-snap-align: start;
+}
+
+.tile:nth-child(3n) {
+  background: #FC2482;
+}
+
+.tile:nth-child(3n+1) {
+  background: #FEC041;
+}
+
+.tile:nth-child(3n+2) {
+  background: #116DDA;
+}
