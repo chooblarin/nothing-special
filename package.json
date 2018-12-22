@@ -4,7 +4,9 @@
   "description": "nothing special",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url https://chooblarin.github.io/nothing-special/"
+    "build": "parcel build src/index.html --public-url https://chooblarin.github.io/nothing-special/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.10.0",
+    "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.11.0"
   }
 }
