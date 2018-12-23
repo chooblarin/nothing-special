@@ -19,6 +19,7 @@ h2 {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   transform: rotateY(45deg);
   transition: transform 1s;
 }
@@ -62,6 +63,7 @@ h2 {
     rgba(206, 75, 85, 0)
   );
   transform: rotateZ(35deg) translate(-16em, 5em);
+  transition: transform 1s;
 }
 
 .suit-dia {
@@ -79,11 +81,5 @@ h2 {
 
 .shine-card:hover::after,
 .shine-card:focus::after {
-  animation: sheen 1s forwards;
-}
-
-@keyframes sheen {
-  100% {
-    transform: rotateZ(35deg) translate(16em, -8em);
-  }
+  transform: rotateZ(35deg) translate(16em, -8em);
 }
