@@ -20,5 +20,8 @@
     "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.11.0",
     "sharp": "^0.21.1"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.5.1"
   }
 }

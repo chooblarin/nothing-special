@@ -1,3 +1,5 @@
+require("intersection-observer");
+
 window.addEventListener("load", () => {
   const options = {
     rootMargin: "-40px",
