@@ -104,15 +104,26 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"main.js":[function(require,module,exports) {
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js").then(function (registration) {
-    console.log("Service Worker registration successful with scope: ", registration.scope);
-  }).catch(function (err) {
-    console.log("Service Worker registration failed: ", err);
+})({"intersection-observer.js":[function(require,module,exports) {
+window.addEventListener("load", function () {
+  var options = {
+    rootMargin: "-40px",
+    threshold: [0.2]
+  };
+  var contents = Array.from(document.querySelectorAll(".content"));
+  var observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (contents.includes(entry.target) && entry.isIntersecting) {
+        entry.target.classList.add("shown");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, options);
+  contents.forEach(function (el) {
+    return observer.observe(el);
   });
-}
-},{"./service-worker.js":[["service-worker.js","service-worker.js"],"service-worker.map","service-worker.js"]}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+});
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -281,5 +292,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.1f19ae8e.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","intersection-observer.js"], null)
+//# sourceMappingURL=/intersection-observer.e4919133.map
